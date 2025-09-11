@@ -1,0 +1,23 @@
+[servers]
+# List of vLLM servers to load balance across
+servers = [
+    { url = "http://172.19.13.5:8081", weight = 1 },
+    { url = "http://172.19.13.6:8088", weight = 1 },
+    # { url = "http://localhost:8002", weight = 1 },
+]
+
+[config]
+# Health check interval in seconds
+health_check_interval = 30
+
+# Config reload interval in seconds
+config_reload_interval = 60
+
+# Request timeout in seconds
+request_timeout = 30
+
+# Health check timeout in seconds
+health_check_timeout = 5
+
+# Retry attempts for failed requests
+max_retries = 3
